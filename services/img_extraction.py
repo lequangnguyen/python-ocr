@@ -1,7 +1,9 @@
-from utils import pre_processing, text_output
-import pytesseract
 from configparser import ConfigParser
+
+import pytesseract
+
 from utils import logger as logger_util
+from utils import pre_processing, text_output
 
 
 def extract_text_from_img(input_file, verbose):
@@ -20,6 +22,7 @@ def extract_text_from_img(input_file, verbose):
     except Exception as e:
         logger.error(e)
         return False
+
 
 def extract_from_image(input_file, output_file, verbose):
     """Output a file to output_files folder."""

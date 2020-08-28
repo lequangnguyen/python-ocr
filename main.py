@@ -4,9 +4,8 @@ from os import path
 import click
 
 from services import img_extraction, pdf_extraction
-from utils import extension_validation
+from utils import constants, extension_validation
 from utils import logger as logger_util
-from utils import constants
 
 
 @click.command()
@@ -55,10 +54,11 @@ def main(input, output, verbose):
     if file_extension[1] == '.pdf':
         result_check = pdf_extraction.extract_from_pdf(input, output, verbose)
     else:
-        result_check = img_extraction.extract_from_image(input, output, verbose)
+        result_check = img_extraction.extract_from_image(
+            input, output, verbose)
     if result_check:
-        logger.info("Finish! Result is saved to tha path of " + constants.OUTPUT_DESTINATION +
-                output)
+        logger.info("Finish! Result is saved to tha path of " +
+                    constants.OUTPUT_DESTINATION + output)
 
 
 if __name__ == '__main__':

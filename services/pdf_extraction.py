@@ -1,11 +1,14 @@
-import pytesseract
 import os
-from pdf2image import convert_from_path
-from services import img_extraction
-from utils import output_optimization
 from configparser import ConfigParser
-from utils import logger as logger_util
+
+import pytesseract
+from pdf2image import convert_from_path
+
+from services import img_extraction
 from utils import constants
+from utils import logger as logger_util
+from utils import output_optimization
+
 
 def extract_from_pdf(input_file, output_file, verbose):
     """Extracting text from a pdf file and save it to output folder."""
@@ -56,7 +59,7 @@ def extract_from_pdf(input_file, output_file, verbose):
                 text = output_optimization.optimize(text)
                 # Finally, write the processed text to the file.
                 f.write(text)
-                # Remove file
+                # Remove temp file
                 os.remove(filename)
                 # Close the file after writing all the text.
             f.close()

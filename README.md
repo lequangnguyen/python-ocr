@@ -35,4 +35,10 @@ $ poetry install
 ```
 For example:
 $ python main.py --input=input_files/scansmpl_1.png --output=scansmpl_1.txt --verbose
+Options:
+  --input TEXT   file input path  [required] . Only accept extensions including .jpg, .jpeg, .png, .pdf
+  --output TEXT  file output path  [required]. Output file extension should be .txt or .text!
+  --verbose      output detailed logs, [optional]
+  --help         Show this message and exit.
+
 ```

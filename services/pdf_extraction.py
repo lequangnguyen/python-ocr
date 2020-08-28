@@ -5,7 +5,7 @@ from services import img_extraction
 from utils import output_optimization
 from configparser import ConfigParser
 from utils import logger as logger_util
-
+from utils import constants
 
 def extract_from_pdf(input_file, output_file, verbose):
     """Extracting text from a pdf file and save it to output folder."""
@@ -19,7 +19,7 @@ def extract_from_pdf(input_file, output_file, verbose):
 
     logger = logger_util.get_logger(verbose, __name__)
     try:
-        pages = convert_from_path(input_file, "ddfsf", poppler_path=poppler_path)
+        pages = convert_from_path(input_file, 500, poppler_path=poppler_path)
 
         image_counter = 1
         for page in pages:
@@ -41,7 +41,7 @@ def extract_from_pdf(input_file, output_file, verbose):
 
             # Open the file in append mode so that
             # All contents of all images are added to the same file
-            f = open("output_files/" + output_file, "a")
+            f = open(constants.OUTPUT_DESTINATION + output_file, "a")
 
             # Iterate from 1 to total number of pages
             for i in range(1, filelimit + 1):

@@ -6,6 +6,7 @@ import click
 from services import img_extraction, pdf_extraction
 from utils import extension_validation
 from utils import logger as logger_util
+from utils import constants
 
 
 @click.command()
@@ -23,7 +24,7 @@ def main(input, output, verbose):
         logger.error("input file name is not exist!")
         return 1
 
-    output_exist = path.exists("output_files/" + output)
+    output_exist = path.exists(constants.OUTPUT_DESTINATION + output)
 
     if output_exist:
         logger.error(output +
@@ -56,7 +57,7 @@ def main(input, output, verbose):
     else:
         result_check = img_extraction.extract_from_image(input, output, verbose)
     if result_check:
-        logger.info("Finish! Result is saved to tha path of output_files/" +
+        logger.info("Finish! Result is saved to tha path of " + constants.OUTPUT_DESTINATION +
                 output)
 
 

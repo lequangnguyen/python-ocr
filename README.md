@@ -26,7 +26,7 @@ $ git clone https://github.com/lequangnguyen/python-ocr.git
 $ cd python-ocr
 ```
 
-3. You are using Poetry to nstall the dependencies in pyproject.toml
+3. You are using Poetry to install the dependencies in pyproject.toml
 ```
 $ poetry install
 ```

@@ -1,0 +1,14 @@
+How many times have you found an old company PDF (or
+image) and needed to gain quick access to the text within,
+only to find you cannot locate the editable version of the file
+or copying and pasting is failing you? Or maybe you only
+need to quickly convert a PDFs or images into a Word (or
+LibreOffice) document, so it can be used for another purpose.
+Sure you can purchase software that will allow you to do just
+that, but if you’re a Google Drive user, you already have that
+ability at your fingertips. That's right, Google Docs does a
+pretty impressive job of converting PDF documents to regular
+Google Docs. It’s not perfect—it's more an OCR for PDFs
+and images—but if you're looking for a means to get to that
+precious text, this is a handy way to do just that.
+

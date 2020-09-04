@@ -4,6 +4,7 @@ import pytesseract
 
 from utils import logger as logger_util
 from utils import pre_processing, text_output
+from utils import output_optimization
 
 
 def extract_text_from_img(input_file, verbose):
@@ -28,6 +29,7 @@ def extract_from_image(input_file, output_file, verbose):
     """Output a file to output_files folder."""
     text = extract_text_from_img(input_file, verbose)
     if text:
+        text = output_optimization.optimize(text)
         text_output.output_text(text, output_file)
         return True
     return False
